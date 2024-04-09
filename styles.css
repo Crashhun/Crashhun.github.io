@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: white;
+}
+
+.container {
+  text-align: center; /* Center align the content */
+}
+
+#welcome {
+  margin-top: 70px; /* Add some top margin to the welcome message */
+  margin-bottom: 60px;
+}
+
+#buttons {
+  margin-top: 50px; /* Add top margin to the buttons */
+}
+
+button {
+  padding: 30px 60px; /* Add padding to the buttons */
+  margin: 0 10px; /* Add some horizontal margin between buttons */
+  font-size: 24px; /* Increase font size */
+  border: none;
+  cursor: pointer;
+  background-color: #007bff; /* Button background color */
+  color: #020202; /* Button text color */
+  border-radius: 5px; /* Add border radius */
+}
+
+button:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}
+
+.countdown-container {
+  margin-top: 50px; /* Add top margin to the countdown container */
+}
+
+#countdownText {
+  font-size: 250px; /* Increase font size of countdown text */
+}
+
+.hidden {
+  display: none; /* Hide elements with the 'hidden' class */
+}
+
+.always-hidden {
+  display: none;
+}
+
+#button1 {
+  background-color: #3bff45; /* Green */
+}
+
+#button2 {
+  background-color: #e9d51e; /* Yellow */
+}
+
+#button3 {
+  background-color: #e63528; /* Red */
+}
+
+/* The Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content {
+  text-align: center;
+}
+.modal-content h2 {
+  margin-top: 0;
+}
+#description {
+  padding-top: 40px; /* Add top padding */
+  font-size: 22px;
+}
+
+#description ul {
+  list-style-type: none; /* Remove list dots */
+  padding-left: 0; /* Remove default left padding */
+}
+
+#description ul li {
+  margin-bottom: 10px; /* Add some bottom margin between list items */
+}
