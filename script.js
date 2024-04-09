@@ -1,6 +1,6 @@
 document.getElementById("button1").addEventListener("click", function () {
   setTimeout(function () {
-    startCountdown(120, 8);
+    startCountdown(100, 10);
     toggleButtonVisibility(); // Call function to toggle button visibility
   }, 5000); // 5-second delay
   hideDescription(); // Show description
@@ -8,7 +8,7 @@ document.getElementById("button1").addEventListener("click", function () {
 
 document.getElementById("button2").addEventListener("click", function () {
   setTimeout(function () {
-    startCountdown(75, 6);
+    startCountdown(50, 5);
     toggleButtonVisibility(); // Call function to toggle button visibility
   }, 5000); // 5-second delay
   hideDescription(); // Show description
@@ -16,7 +16,7 @@ document.getElementById("button2").addEventListener("click", function () {
 
 document.getElementById("button3").addEventListener("click", function () {
   setTimeout(function () {
-    startCountdown(45, 5);
+    startCountdown(30, 4);
     toggleButtonVisibility(); // Call function to toggle button visibility
   }, 5000); // 5-second delay
   hideDescription(); // Show description
@@ -27,6 +27,21 @@ document.getElementById("resetButton").addEventListener("click", function () {
   toggleButtonVisibility(); // Show buttons again
   document.getElementById("description").classList.remove("hidden"); // Show description
 });
+
+function playClap1Sound() {
+  var audio = new Audio("clap1.mp3");
+  audio.play();
+}
+
+function playClap2Sound() {
+  var audio = new Audio("clap2.mp3");
+  audio.play();
+}
+
+function playBeepSound() {
+  var audio = new Audio("beep.mp3");
+  audio.play();
+}
 
 function toggleButtonVisibility() {
   document.getElementById("buttons").classList.add("hidden"); // Hide buttons
@@ -91,22 +106,45 @@ function startCountdown(duration, flashCountValue) {
       // Update flash count display
       flashCountElement.innerText = "Flashes: " + flashCount;
 
-      // Determine background color based on random timing
+      // Determine background color based on selected radio button
+      var colorOption = document.querySelector(
+        'input[name="colorOption"]:checked'
+      ).value;
       var randomTiming = flashTimings[flashIndex];
-      if (isPrime(randomTiming)) {
-        // Prime number
-        document.body.style.backgroundColor = "darkblue";
-      } else if (randomTiming % 2 === 0) {
-        // Even number
-        document.body.style.backgroundColor = "red";
+
+      if (colorOption === "oneColor") {
+        // One color: always yellow
+        document.body.style.backgroundColor = "Yellow";
+        playClap1Sound();
+      } else if (colorOption === "twoColor") {
+        // Two color: odd - red, even - yellow
+        if (randomTiming % 2 === 0) {
+          document.body.style.backgroundColor = "yellow";
+          playClap1Sound();
+        } else {
+          document.body.style.backgroundColor = "red";
+          playClap2Sound();
+        }
       } else {
-        // Odd number
-        document.body.style.backgroundColor = "yellow";
+        // Three color: original logic (based on prime, odd, even)
+        if (isPrime(randomTiming)) {
+          // Prime number
+          document.body.style.backgroundColor = "darkblue";
+          playBeepSound();
+        } else if (randomTiming % 2 === 0) {
+          // Even number
+          document.body.style.backgroundColor = "red";
+          playClap2Sound();
+        } else {
+          // Odd number
+          document.body.style.backgroundColor = "yellow";
+          playClap1Sound();
+        }
       }
 
       // Reset background color after 1.5 seconds
       setTimeout(function () {
-        document.body.style.backgroundColor = "";
+        document.body.style.backgroundColor = "rgba(160, 159, 159, 0.541)";
       }, 750);
 
       // Move to the next flash timing
@@ -132,7 +170,7 @@ function resetCountdown() {
   document.getElementById("countdownText").innerText = "";
 
   // Reset the background color
-  document.body.style.backgroundColor = "";
+  document.body.style.backgroundColor = "rgba(160, 159, 159, 0.541)";
 
   // Reset the flash count
   flashCount = 0;
@@ -234,7 +272,7 @@ function resetCountdown() {
   document.getElementById("countdownText").innerText = "";
 
   // Reset the background color
-  document.body.style.backgroundColor = "";
+  document.body.style.backgroundColor = "rgba(160, 159, 159, 0.541)";
 
   // Reset the flash count
   flashCount = 0;

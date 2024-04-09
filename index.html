@@ -3,17 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Training Web App</title>
+    <!-- Ensures proper rendering and scaling on mobile devices -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TempoThrust</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body style="background-color: rgba(160, 159, 159, 0.541)">
     <div id="welcome" class="container">
-      <h1>Footwork</h1>
+      <h1>TempoThrust</h1>
+
+      <div class="color-options">
+        <input
+          type="radio"
+          id="oneColor"
+          name="colorOption"
+          value="oneColor"
+          checked
+        />
+        <label for="oneColor">One Color</label>
+        <input type="radio" id="twoColor" name="colorOption" value="twoColor" />
+        <label for="twoColor">Two Color</label>
+        <input
+          type="radio"
+          id="threeColor"
+          name="colorOption"
+          value="threeColor"
+        />
+        <label for="threeColor">Three Color</label>
+      </div>
     </div>
     <div id="buttons" class="container">
-      <button id="button1" class="slow">Slow<br />120 sec</button>
-      <button id="button2" class="medium">Medium<br />75 sec</button>
-      <button id="button3" class="fast">Fast<br />45 sec</button>
+      <button id="button1" class="slow">Slow speed<br />100 sec</button>
+      <button id="button2" class="medium">Medium speed<br />50 sec</button>
+      <button id="button3" class="fast">Full Speed<br />30 sec</button>
     </div>
 
     <div id="countdown" class="container hidden">
@@ -27,27 +49,42 @@
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Modal Title</h2>
+        <h2>Starting Training</h2>
         <p>Get in engarde position, training starts in 5 seconds</p>
       </div>
     </div>
     <div id="description" class="container">
+      <h2>Instructions</h2>
       <p>
         Each button click initiates a timer, with the duration indicated on the
         button.
       </p>
       <p>
         The tempo of your footwork should correspond to the type of button you
-        press.
+        press.<br /><br />
+        <i>
+          For example, if you are done with the slow-speed exercise, the medium
+          speed should be slightly faster than the slow speed.</i
+        ><br /><br />
+        <b
+          >Full speed should be the fastest, where you put everything into the
+          exercise.</b
+        >
       </p>
       <p>
         The screen background will intermittently flash in random intervals,
         each signaling a different action:
       </p>
       <ul>
-        <li><strong>Yellow:</strong> Lunge</li>
-        <li><strong>Red:</strong> Step Lunge</li>
-        <li><strong>Blue:</strong> Flèche</li>
+        <li style="color: Yellow">
+          <strong>Single Clap / Yellow:</strong> Lunge
+        </li>
+        <li style="color: red">
+          <strong>Double Clap / Red:</strong> Step Lunge
+        </li>
+        <li style="color: darkblue">
+          <strong>HAAH shout / Blue:</strong> Flèche
+        </li>
       </ul>
     </div>
     <button id="resetButton" class="reset hidden">Reset</button>
