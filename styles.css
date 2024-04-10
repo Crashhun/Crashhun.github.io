@@ -1,3 +1,8 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,12 +15,12 @@ body {
 }
 
 #welcome {
-  margin-top: 70px;
-  margin-bottom: 60px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #buttons {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 button {
@@ -26,19 +31,19 @@ button {
   cursor: pointer;
   background-color: #007bff;
   color: #020202;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0057b311;
 }
 
 .countdown-container {
-  margin-top: 50px;
+  margin-top: 15px;
 }
 
 #countdownText {
-  font-size: 250px;
+  font-size: 200px;
 }
 
 .hidden {
@@ -107,7 +112,7 @@ button:hover {
 }
 
 #description {
-  padding-top: 40px;
+  padding-top: 15px;
   font-size: 22px;
 }
 

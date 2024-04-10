@@ -1,6 +1,7 @@
 document.getElementById("button1").addEventListener("click", function () {
   setTimeout(function () {
     startCountdown(100, 10);
+
     toggleButtonVisibility(); // Call function to toggle button visibility
   }, 5000); // 5-second delay
   hideDescription(); // Show description
@@ -48,12 +49,15 @@ function toggleButtonVisibility() {
   document.getElementById("countdown").classList.remove("hidden"); // Show countdown
   document.getElementById("description").classList.add("hidden"); // Hide description
   document.getElementById("resetButton").classList.remove("hidden"); // Show reset button
+  document.getElementById("colorPicker").classList.add("hidden");
+  console.log(document.getElementById("buttons").classList);
 }
 
 document.getElementById("resetButton").addEventListener("click", function () {
   resetCountdown();
   document.getElementById("buttons").classList.remove("hidden"); // Show buttons again
   document.getElementById("description").classList.remove("hidden"); // Show description
+  document.getElementById("colorPicker").classList.remove("hidden");
 });
 function hideDescription() {
   var description = document.getElementById("description");
