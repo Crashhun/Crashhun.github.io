@@ -47,7 +47,6 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  /* Adjusted styles for smaller screens */
   #countdownText {
     font-size: 100px;
   }
